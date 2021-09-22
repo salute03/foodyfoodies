@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
-        crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
+       integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+       crossorigin="anonymous" referrerpolicy="no-referrer" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
@@ -14,6 +14,36 @@
     <title>foodyfoodies</title>
 </head>
 <body>
+    <header>
+        <!-- desktop navbar -->
+        <nav class="nav-extended text-shadow black">
+            <div class="nav-wrapper">
+              <a href="#!" class="brand-logo">foodyfoodies</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-align-justify"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Create Recipe</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+              </ul>
+            </div>
+          </nav>
+
+        <!-- mobile sidenavbar -->
+          <ul class="sidenav" id="mobile-demo">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Create Recipe</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+          </ul>
+                  
+    </header>
 
     
     {% block content %}
